@@ -16,5 +16,15 @@ namespace CourseManagementSystem.Repository
             return courseresult;
         }
 
+        public void SetTraineeResults(int id,int CourseId)
+        {
+            CourseResult courseresult = new CourseResult();
+            courseresult.TraineeId = id;
+            courseresult.CourseId = CourseId;
+            courseresult.Degree = 0;
+            dbcontext.CourseResults.Add(courseresult);
+            dbcontext.SaveChanges();
+        }
+
     }
 }

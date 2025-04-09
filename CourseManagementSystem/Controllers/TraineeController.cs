@@ -42,7 +42,7 @@ namespace CourseManagementSystem.Controllers
         [HttpGet]
         public IActionResult New(int id)
         {
-            List<Department> department = DepartmentRepo.GetAll();
+           var department = DepartmentRepo.GetAll();
             ViewBag.DeptList = department;
             return View();
         }
@@ -53,7 +53,7 @@ namespace CourseManagementSystem.Controllers
             if (NewTrainee != null)
             {
                 TraineeRepo.Add(NewTrainee);
-                RedirectToAction("Index");
+                return RedirectToAction("Index");
             }
             return View("New",NewTrainee);
         }

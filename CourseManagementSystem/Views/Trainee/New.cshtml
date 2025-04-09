@@ -25,9 +25,16 @@
         @* <input type="number" name="DepartmentId" class="form-control" /> *@
         <select name="DepartmentId" class="form-control">
             <option value="0" > ---Select Department----</option>
-            @foreach (Department deptItem in ViewBag.DeptList)
+            @if (ViewBag.DeptList != null)
             {
-                <option value="@deptItem.Id">@deptItem.Name</option>
+                @foreach (Department deptItem in ViewBag.DeptList)
+                {
+                    <option value="@deptItem.Id">@deptItem.Name</option>
+                }
+            }
+            else
+            {
+                <h2>viewbag is null</h2>
             }
         </select>       
     </div>
