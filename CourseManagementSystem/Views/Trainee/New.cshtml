@@ -1,0 +1,37 @@
+﻿@model Trainee
+@{
+    ViewData["Title"] = "New";
+}
+
+<h1>New</h1>
+<form method="post" action=" /Trainee/SaveNew">
+    <div>
+        <label>Name</label>
+        <input type="text" name="Name" class="form-control" />
+    </div>
+
+    <div>
+        <label>Img</label>
+        <input type="text" name="Img" class="form-control" />
+    </div>
+
+    <div>
+        <label>Address</label>
+        <input type="text" name="Address" class="form-control" />
+    </div>
+
+    <div>
+        <label>Department</label>
+        @* <input type="number" name="DepartmentId" class="form-control" /> *@
+        <select name="DepartmentId" class="form-control">
+            <option value="0" > ---Select Department----</option>
+            @foreach (Department deptItem in ViewBag.DeptList)
+            {
+                <option value="@deptItem.Id">@deptItem.Name</option>
+            }
+        </select>       
+    </div>
+
+    <input type="submit" value="Add" class="btn btn-success" />
+</form>
+

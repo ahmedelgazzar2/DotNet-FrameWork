@@ -1,0 +1,19 @@
+﻿@model Instructor
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<a href="/Instructor/Edit/@Model.Id" class="btn btn-primary">Edit</a>
+
+<div class="card" style="width:400px">
+    <img class="card-img-top" src="/Images/@Model.Img" alt="Card image">
+    <div class="card-body">
+        <h4 class="card-title">@Model.Name</h4>
+        <p class="card-text">ID = @Model.Id -- Email = @Model.Name -- Salary = @Model.Salary -- Department = @Model.DepartmentId -- Course = @Model.CourseId</p>
+    </div>
+</div>
+
+<a href="/Instructor/Index" class="btn btn-primary">All</a>
+

@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewData["Title"] = "New";
+}
+
+<h1>New</h1>
+
+<form method="post" action =" /Instructor/SaveNew">
+    <div>
+        <label>Name</label>
+        <input type="text" name="Name" class="form-control" />
+    </div>
+
+    <div>
+        <label>Img</label>
+        <input type="text" name="Img" class="form-control" />
+    </div>
+
+    <div>
+        <label>Salary</label>
+        <input type="number" name="Salary" class="form-control" />
+    </div>
+
+    <div>
+        <label>Department</label>
+        @* <input type="number" name="DepartmentId" class="form-control" /> *@
+        <select name="DepartmentId" class="form-control">
+            @foreach (Department deptItem in ViewBag.DeptList)
+            {
+                <option value="@deptItem.Id">@deptItem.Name</option>
+            }
+        </select>
+    </div>
+
+    <div>
+        <label>Course</label>
+        @* <input type="number" name="CourseId" class="form-control" /> *@
+        <select name="CourseId" class="form-control">
+            @foreach (Course crsItem in ViewBag.CourseList)
+            {
+                <option value="@crsItem.Id">@crsItem.Name</option>
+            }
+        </select>
+    </div>
+
+    <input type="submit" value="Add" class="btn btn-success" />
+</form>
+
+

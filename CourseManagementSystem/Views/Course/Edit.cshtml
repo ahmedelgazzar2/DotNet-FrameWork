@@ -1,0 +1,37 @@
+﻿@model Course
+@{
+    ViewData["Title"] = "Edit";
+    SelectList DeptList = new SelectList(ViewBag.Department, "Id", "Name", Model.DepartmentId);
+}
+
+<h1>Edit</h1>
+
+<form asp-action="SaveEdit" asp-controller="Course" asp-route-id="@Model.Id">
+    
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" value="@Model.Name" class="form-control" />
+    </div>
+    <div>
+        <label asp-for="Degree"></label>
+        <input asp-for="Degree" value="@Model.Degree" class="form-control" />
+    </div>
+    <div>
+        <label asp-for="MinDegree"></label>
+        <input asp-for="MinDegree" value="@Model.MinDegree" class="form-control" />
+    </div>
+    <div>
+        <label asp-for="Department"></label>
+        <select asp-for="DepartmentId" asp-items="DeptList" class="form-control" >
+            <option value="0">Select Department</option>
+        </select>
+    </div>
+
+    <input type="submit" value="Edit" class="btn btn-success" />
+</form> 
+
+@section Scripts {
+    @* <script src="~/lib/jquery/dist/jquery.js"></script> *@
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+}

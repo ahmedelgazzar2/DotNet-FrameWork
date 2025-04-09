@@ -1,0 +1,16 @@
+﻿@model Trainee
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div class="card" style="width:400px">
+    <img class="card-img-top" src="/Images/@Model.Img" alt="Card image">
+    <div class="card-body">
+        <h4 class="card-title">@Model.Name</h4>
+        <p class="card-text">ID = @Model.Id -- Email = @Model.Name@@gmail.com -- Address = @Model.Address -- Department = @Model.Department </p>
+    </div>
+</div>
+
+<a href="/Trainee/Index" class="btn btn-primary">All</a>
