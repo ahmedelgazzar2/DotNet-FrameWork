@@ -4,6 +4,7 @@ using CourseManagementSystem.Repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CourseManagementSystem.Migrations
 {
     [DbContext(typeof(ProjectEntities))]
-    partial class ProjectEntitiesModelSnapshot : ModelSnapshot
+    [Migration("20250416230436_update Email columne")]
+    partial class updateEmailcolumne
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

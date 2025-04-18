@@ -1,9 +1,11 @@
 ﻿using CourseManagementSystem.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace CourseManagementSystem.Repository
 {
-    public class ProjectEntities : DbContext
+    public class ProjectEntities : IdentityDbContext<ApplicationUser>
     {
 
         public ProjectEntities() : base()
@@ -25,6 +27,7 @@ namespace CourseManagementSystem.Repository
         {
             optionsBuilder.UseSqlServer("Data Source = .;Initial Catalog=CourseManagemrntSystem;Integrated Security=True;TrustServerCertificate=True");
             base.OnConfiguring(optionsBuilder);
+           
         }
 
 

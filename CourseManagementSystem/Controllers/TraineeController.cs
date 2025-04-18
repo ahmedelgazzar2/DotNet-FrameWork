@@ -27,14 +27,14 @@ namespace CourseManagementSystem.Controllers
         public IActionResult Details(int id)
         {
             //getting data from database
-            //TraineeWithCourseResultViewModel TraineeViewModel = new TraineeWithCourseResultViewModel();
-            //CourseResult courseResult = CourseResultRepo.GetTraineeResults(id);
-            //if (courseResult != null)
-            //{
-            //    //declear data to view model
-            //    TraineeRepo.TraineeWithCourseResult(id, TraineeViewModel);
-            //    return View(TraineeViewModel);
-            //}
+            TraineeWithCourseResultViewModel TraineeViewModel = new TraineeWithCourseResultViewModel();
+            CourseResult courseResult = CourseResultRepo.GetTraineeResults(id);
+            if (courseResult != null)
+            {
+                //declear data to view model
+                TraineeRepo.TraineeWithCourseResult(id, TraineeViewModel);
+                return View(TraineeViewModel);
+            }
             Trainee trainee = TraineeRepo.GetById(id);
             return View(trainee);
         }

@@ -5,7 +5,9 @@ namespace CourseManagementSystem.Repository
 {
     public interface ICourseResultRepository
     {
-        public CourseResult GetTraineeResults(int id);
-        
+        CourseResult GetTraineeResults(int id);
+
+        void SetTraineeResults(int Traineeid, int DeptId);
+
     }
 }

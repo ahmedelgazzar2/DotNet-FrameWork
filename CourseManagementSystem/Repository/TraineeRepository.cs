@@ -24,8 +24,10 @@ namespace CourseManagementSystem.Repository
             return trainee;
         }
         public void Add(Trainee newTrainee)
-        {
+        {           
             dbcontext.Trainee.Add(newTrainee);
+            dbcontext.SaveChanges();
+            courseResultRepo.SetTraineeResults(newTrainee.Id, newTrainee.DepartmentId);
             dbcontext.SaveChanges();
         }
         public void Delete(int id)
